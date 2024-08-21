@@ -1,3 +1,10 @@
 {
-  "cSpell.words": ["Oscuro"]
+  "cSpell.words": [
+    "Oscuro"
+  ],
+  "cSpell.ignoreWords": [
+    "bienesraices",
+    "descripcion",
+    "exito"
+  ]
 }
