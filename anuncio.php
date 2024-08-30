@@ -7,8 +7,7 @@ $id = filter_var($id, FILTER_VALIDATE_INT);
 if (!$id) {
     header("Location: /bienesraices/");
 }
-require "includes/config/database.php";
-// require "includes/config/database.php";
+require 'includes/app.php';
 $db = conectarDB();
 
 $query = "SELECT * FROM propiedades WHERE id=${id}";
@@ -19,7 +18,6 @@ if (!$resultado->num_rows) {
 }
 $propiedad = mysqli_fetch_assoc($resultado);
 
-require 'includes/funciones.php';
 incluirTemplate('header');
 ?>
 

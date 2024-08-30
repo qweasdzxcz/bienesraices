@@ -1,9 +1,9 @@
 <?php
 function conectarDB(): mysqli
 {
-    $db = mysqli_connect('localhost', 'root', 'qwe12345', 'bienesraices_crud');
+    $db = new mysqli('localhost', 'root', 'qwe12345', 'bienesraices_crud');
     if (!$db) {
-        echo "n ose conecto";
+        echo "no se conecto";
         exit;
     }
     return $db;

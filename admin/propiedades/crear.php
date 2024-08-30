@@ -1,15 +1,13 @@
 <?php
-//validar sesion
-require '../../includes/funciones.php';
-$auth = estaAutenticado();
-if (!$auth) {
-    header("Location: /bienesraices/");
-}
+
+require '../../includes/app.php';
+
+use App\Propiedad;
+
+estaAutenticado();
 
 
 //base de datos
-require '../../includes/config/database.php';
-
 $db = conectarDB();
 /* var_dump($db); */
 
@@ -28,7 +26,8 @@ $estacionamiento = '';
 $vendedorId = '';
 //ejecutar el código después de enviar form
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
+    $propiedad = new Propiedad($_POST);
+    $propiedad->guardar();
     /* echo "<pre>";
     var_dump($_POST);
     echo "</pre>";
@@ -111,10 +110,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         //subir
         move_uploaded_file($imagen['tmp_name'], $carpetaImagenes . $nombreImagen);
 
-        //insertar db
-        $query = " INSERT INTO propiedades (titulo,precio,imagen,descripcion,habitaciones,wc,estacionamiento,creado,
-    vendedores_id) 
-    VALUES ('$titulo','$precio','$nombreImagen','$descripcion','$habitaciones','$wc','$estacionamiento','$creado','$vendedorId')";
+       
 
         $resultado = mysqli_query($db, $query);
         if ($resultado) {
@@ -129,7 +125,7 @@ incluirTemplate('header');
 
 <main class="contenedor seccion">
     <h1>Crear Propiedad</h1>
-    <a href="../" class="boton boton-verde">volver</a>
+    <a href="../" class="boton boton-verde">Volver</a>
 
     <?php foreach ($errores as $error) : ?>
         <div class="alerta error">
@@ -167,7 +163,7 @@ incluirTemplate('header');
 
         <fieldset>
             <legend>Vendedor</legend>
-            <select name="vendedor">
+            <select name="vendedorId">
                 <option>--Selecione--</option>
                 <?php while ($vendedor = mysqli_fetch_assoc($resultado)) : ?>
                     <option <?php echo $vendedorId === $vendedor['id'] ? 'selected' : ''; ?> value="<?php echo $vendedor['id']; ?>"><?php echo $vendedor['nombre'] . " " . $vendedor['apellido']; ?></option>

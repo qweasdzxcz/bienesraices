@@ -132,7 +132,7 @@ incluirTemplate('header');
 
 <main class="contenedor seccion">
     <h1>Actualizar Propiedad</h1>
-    <a href="../" class="boton boton-verde">volver</a>
+    <a href="../" class="boton boton-verde">Volver</a>
 
     <?php foreach ($errores as $error) : ?>
         <div class="alerta error">

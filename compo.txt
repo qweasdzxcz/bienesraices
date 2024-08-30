@@ -1,0 +1,26 @@
+{
+    "name": "qweasdzxc/bienesraices",
+    "description": "creando proyecto poo",
+    "type": "porject",
+    /*****
+    "autoload": {
+        "psr-4": {
+            "Qweasdzxc\\Bienesraices\\": "src/"
+        }
+    },
+    /*******
+    "authors": [
+        {
+            "name": "qweasdzxcz",
+            "email": "94639711+qweasdzxcz@users.noreply.github.com"
+        }
+    ],
+    "require": {},
+
+    //agregado video 359
+    "autoload": {
+        "psr-4": {
+            "App\\": "./classes"
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "name": "qweasdzxc/bienesraices",
+    "description": "creando proyecto poo",
+    "type": "porject",
+    "autoload": {
+        "psr-4": {
+            "App\\": "./classes"
+        }
+    },
+    "authors": [
+        {
+            "name": "qweasdzxcz",
+            "email": "94639711+qweasdzxcz@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
